@@ -12,6 +12,11 @@ html, body {
     height: 100%;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .projects-page {
     position: relative;
     z-index: 1;
@@ -680,5 +685,119 @@ html, body {
 
     .lightbox-next {
         right: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        padding: 24px 16px 40px;
+        min-height: auto;
+        align-items: center;
+    }
+
+    .hero-card {
+        width: 92vw;
+        min-width: 0;
+        margin-top: 64px;
+    }
+
+    #hero-image {
+        height: 240px !important;
+    }
+
+    .hero-ctas {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cta {
+        width: 100%;
+        text-align: center;
+    }
+
+    .showcase {
+        padding: 56px 16px;
+    }
+
+    .showcase-content h2 {
+        font-size: 2rem;
+    }
+
+    .showcase-gallery {
+        gap: 12px;
+    }
+
+    .showcase-gallery .showcase-image {
+        width: 46vw;
+        height: 46vw;
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .navigation {
+        width: min(72vw, 260px);
+        align-items: flex-start;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .navigation a {
+        width: 100%;
+    }
+
+    .projects-bg {
+        position: relative;
+    }
+
+    .projects-page {
+        padding: 96px 16px 40px;
+    }
+
+    .projects-grid {
+        padding: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+    }
+
+    .projects-page h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .projects-page p {
+        font-size: 1.05rem !important;
+    }
+
+    .project-hero {
+        height: 70vh;
+    }
+
+    .project-hero-multi {
+        padding: 24px 16px;
+    }
+
+    .project-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .prev-project,
+    .project-ret,
+    .next-project {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 520px) {
+    #hero-image {
+        height: 200px !important;
+    }
+
+    .showcase-gallery .showcase-image {
+        width: 80vw;
+        height: 80vw;
+        max-width: 320px;
+        max-height: 320px;
     }
 }
