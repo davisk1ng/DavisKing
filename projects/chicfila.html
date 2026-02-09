@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Chicfila - Davis King</title>
+        <link rel="stylesheet" href="../assets/css/styles.css">
+    </head>
+    <body>
+        <!-- Toggle Button -->
+        <button id="navToggle" class="nav-toggle" aria-label="Open navigation">
+            <span class="burger" aria-hidden="true"></span>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="navigation" id="navigation">
+            <a class="Home" href="../index.html">Home</a>
+            <a class="Projects" href="../projects.html">Projects</a>
+            <a class="Contact" href="../contact.html">Contact</a>
+        </nav>
+
+        <!-- Project Hero Images -->
+        <section class="project-hero-multi">
+            <img src="../assets/images/Collage-Poster-1.jpg" alt="Chicfila Poster 1" class="project-image clickable-image" data-image-index="0">
+            <img src="../assets/images/Collage Poster 2.jpg" alt="Chicfila Poster 2" class="project-image clickable-image" data-image-index="1">
+            <img src="../assets/images/Collage Poster 3.jpg" alt="Chicfila Poster 3" class="project-image clickable-image" data-image-index="2">
+        </section>
+
+        <!-- Image Lightbox Modal -->
+        <div id="imageLightbox" class="image-lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+                <button class="lightbox-nav lightbox-prev" aria-label="Previous image">←</button>
+                <img id="lightboxImage" src="" alt="Full screen image" class="lightbox-image">
+                <button class="lightbox-nav lightbox-next" aria-label="Next image">→</button>
+            </div>
+        </div>
+
+        <!-- Project Description -->
+        <section class="project-description chicfila">
+            <div class="description-content">
+                <h1>Chic-fil-a</h1>
+                <p>A vibrant poster series for Chick-fil-A showcasing bold design and creative visual storytelling. These posters demonstrate the power of cohesive branding and eye-catching typography to communicate brand values.</p>
+            </div>
+        </section>
+
+        <!-- Next Project Link -->
+        <section class="project-nav">
+            <div style="display:flex; justify-content:center; align-items:center; gap:18px; width:75%; margin:0 auto;">
+                <a href="bottlecap.html" class="prev-project" aria-label="View previous project">
+                    <span class="prev-project-label">Previous Project</span>
+                    <span class="prev-project-arrow">←</span>
+                </a>
+
+
+                <a href="../projects.html" class="project-ret" aria-label="Back to Projects">
+                    <span class="project-ret-label">Back to Projects</span>
+                    <span class="project-ret-arrow">↑</span>
+                </a>
+
+                
+                <a href="toy.html" class="next-project" aria-label="View next project">
+                    <span class="next-project-label">Next Project</span>
+                    <span class="next-project-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <script src="../assets/js/script.js"></script>
+    </body>
+</html>
