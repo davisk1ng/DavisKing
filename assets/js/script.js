@@ -132,3 +132,33 @@ lightbox.addEventListener('click', (e) => {
         hideLightbox();
     }
 });
+
+// Hero tab switching (Home / About)
+const heroTabs = document.querySelectorAll('.hero-tab');
+const homePanel = document.querySelector('[data-panel="home"]');
+const aboutPanel = document.querySelector('[data-panel="about"]');
+
+function setActiveTab(name) {
+    heroTabs.forEach(btn => {
+        const isActive = btn.dataset.tab === name;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    if (name === 'about') {
+        if (homePanel) homePanel.setAttribute('aria-hidden', 'true');
+        if (aboutPanel) { aboutPanel.classList.add('active'); aboutPanel.removeAttribute('aria-hidden'); }
+    } else {
+        if (homePanel) homePanel.removeAttribute('aria-hidden');
+        if (aboutPanel) { aboutPanel.classList.remove('active'); aboutPanel.setAttribute('aria-hidden', 'true'); }
+    }
+}
+
+heroTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+        setActiveTab(btn.dataset.tab);
+    });
+});
+
+// Initialize state (ensure home visible)
+setActiveTab('home');

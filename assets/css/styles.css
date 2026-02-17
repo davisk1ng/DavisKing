@@ -37,7 +37,8 @@ img {
     align-items: flex-start;
     justify-content: center;
     min-height: calc(100vh - 40px);
-    background: url(../images/background2.jpg) center center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-card {
@@ -55,6 +56,51 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Cloud layers b0ehind hero card */
+.clouds {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+.clouds__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-position: 0 10%;
+    background-size: contain;
+    transform: translateX(0);
+}
+.clouds__layer--1 {
+    background-image: url('../images/clouds1.png');
+    animation: cloudMove 60s linear infinite;
+    z-index: 1;
+}
+.clouds__layer--2 {
+    background-image: url('../images/clouds2.png');
+    animation: cloudMove 200s linear infinite;
+    z-index: 2;
+}
+.clouds__layer--3 {
+    background-image: url('../images/clouds3.png');
+    animation: cloudMove 400s linear infinite;
+    opacity: 0.8;
+    z-index: 3;
+}
+
+@keyframes cloudMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 
