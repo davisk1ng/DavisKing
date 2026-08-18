@@ -1,63 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Davis King</title>
-        <link rel="icon" type="image/png" href="assets/images/icon.png">
-        <link rel="stylesheet" href="assets/css/styles.css">
-    </head>
-    <body>
-        <!-- Toggle Button -->
-        <button id="navToggle" class="nav-toggle" aria-label="Open navigation">
-            <span class="burger" aria-hidden="true"></span>
-        </button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Davis King</title>
+    <link rel="icon" type="image/png" href="assets/images/icon.png">
+    <link rel="stylesheet" href="https://use.typekit.net/lub3zog.css">
+    <link rel="stylesheet" href="assets/css/gameboy/tokens.css">
+    <link rel="stylesheet" href="assets/css/gameboy/shell.css">
+    <link rel="stylesheet" href="assets/css/gameboy/screen-ui.css">
+    <link rel="stylesheet" href="assets/css/gameboy/controls.css">
+    <link rel="stylesheet" href="assets/css/gameboy/responsive.css">
+</head>
+<body class="gameboy-home">
+    <main class="gb-stage" aria-label="Gameboy portfolio interface">
+        <section class="gb-shell" aria-label="Emulated handheld console">
+            <div class="gb-screen-wrap">
+                <div class="gb-screen-bezel">
+                    <div class="gb-screen" role="application" aria-label="Portfolio menu screen">
+                        <div class="gb-home-menu is-active" data-screen="home">
+                            <img class="gb-avatar" src="assets/images/home.png" alt="Pixel portrait of Davis King">
+                            <h1>Davis King</h1>
+                            <p class="gb-subtitle">Visual designer building playful brand worlds.</p>
+                            <button class="gb-start-button is-selected" type="button" data-start-menu aria-label="Start portfolio menu">
+                                <span class="gb-start-text">PRESS A</span>
+                            </button>
+                        </div>
 
-        
-        <!-- Navigation -->
-            <nav class="navigation" id="navigation">
-            <a class="Home" href="index.html">Home</a>
-            <a class="Projects" href="projects.html">Projects</a>
-            <a class="Contact" href="contact.html">Contact</a>
-        </nav>
+                        <div class="gb-main-menu" data-screen="menu" aria-live="polite" aria-hidden="true">
+                            <section class="gb-menu-side" aria-label="Main menu options area">
+                                <p class="gb-system-corner" id="gbSystemCorner" aria-hidden="true"></p>
+                                <nav class="gb-menu-column" aria-label="Main menu options">
+                                    <ul class="gb-menu" aria-label="Main menu">
+                                        <li><button class="gb-menu-item is-selected" data-menu="portfolio">Portfolio</button></li>
+                                        <li><button class="gb-menu-item" data-menu="side-projects">Side Projects</button></li>
+                                        <li><button class="gb-menu-item" data-menu="customizer">Customizer</button></li>
+                                        <li><button class="gb-menu-item" data-menu="socials">Socials</button></li>
+                                    </ul>
+                                    <ul class="gb-project-list" aria-label="Project names"></ul>
+                                    <button class="gb-back-button" id="gbBackButton" type="button" aria-label="Back to main menu">&lt;back</button>
+                                </nav>
+                            </section>
 
-        <!-- Hero / Cover -->
-        <main class="hero">
-            <div class="clouds" aria-hidden="true">
-                <div class="clouds__layer clouds__layer--1"></div>
-                <div class="clouds__layer clouds__layer--2"></div>
-                <div class="clouds__layer clouds__layer--3"></div>
-            </div>
-            <div class="hero-card rotating-hero" style="background: rgb(47, 47, 47);">
-                <a id="hero-image-link" href="projects/bottlecap.html" style="display:block; border-radius:14px; overflow:hidden;">
-                    <img id="hero-image" src="assets/images/finalcap1.gif" alt="Bottlecap Project" style="width:100%; height:320px; object-fit:cover; border-radius:14px; transition:opacity 0.6s;" />
-                </a>
-                <h1>Davis King</h1>
-                <p class="tagline">Designing delightful interfaces and simple experiences.</p>
-                <div class="hero-ctas">
-                    <a class="cta primary" href="projects.html">See Projects</a>
-                    <a class="cta secondary" href="contact.html">Contact</a>
+                            <section class="gb-content-column" aria-label="Selected menu content">
+                                <p class="gb-action-hint" id="gbActionHint" aria-hidden="true"></p>
+                                <section class="gb-preview-card" aria-live="polite" aria-label="Selected menu preview">
+                                    <img class="gb-preview-image" src="assets/images/sunset.jpg" alt="Portfolio preview image">
+                                    <video class="gb-preview-video" muted loop playsinline hidden aria-label="Portfolio preview video"></video>
+                                    <div class="gb-preview-frame-controls" id="gbPreviewFrameControls" aria-hidden="true">
+                                        <button class="gb-preview-frame-btn" id="gbPreviewPrev" type="button" aria-label="Previous preview image">&#x2039;</button>
+                                        <button class="gb-preview-frame-btn" id="gbPreviewNext" type="button" aria-label="Next preview image">&#x203A;</button>
+                                    </div>
+                                </section>
+
+                                <button class="gb-video-back" id="gbVideoBack" type="button" aria-label="Back to project list">&lt;back</button>
+
+                                <section class="gb-panel-stack" aria-label="Selected menu content panel">
+                                    <section class="gb-panel is-active" data-panel="portfolio">
+                                        <p class="gb-panel-title">Portfolio</p>
+                                        <div class="gb-description-card">
+                                            <p class="gb-description-title">Main Projects System</p>
+                                            <p class="gb-description-text">A curated collection of flagship branding and packaging work. Select this system to browse full case-study level projects and polished final outputs.</p>
+                                        </div>
+                                        <button class="gb-panel-back" type="button" data-panel-back aria-label="Back to project list">&lt;back</button>
+                                    </section>
+
+                                    <section class="gb-panel" data-panel="side-projects">
+                                        <p class="gb-panel-title">Side Projects</p>
+                                        <div class="gb-description-card">
+                                            <p class="gb-description-title">Side Projects System</p>
+                                            <p class="gb-description-text">Experimental and iterative pieces focused on style tests, alternate directions, and fast concept exploration outside of main client-style sets.</p>
+                                        </div>
+                                        <button class="gb-panel-back" type="button" data-panel-back aria-label="Back to project list">&lt;back</button>
+                                    </section>
+
+                                    <section class="gb-panel" data-panel="customizer">
+                                        <p class="gb-panel-title">Customizer</p>
+                                        <div class="gb-toggles">
+                                            <button class="gb-toggle" type="button" data-palette="graphic-designer" aria-pressed="false">
+                                                <span class="gb-toggle-label">Graphic Designer</span>
+                                                <span class="gb-toggle-switch" aria-hidden="true"><span class="gb-toggle-knob"></span></span>
+                                            </button>
+                                            <button class="gb-toggle" type="button" data-palette="website-builder" aria-pressed="false">
+                                                <span class="gb-toggle-label">Website Builder</span>
+                                                <span class="gb-toggle-switch" aria-hidden="true"><span class="gb-toggle-knob"></span></span>
+                                            </button>
+                                            <button class="gb-toggle" type="button" data-palette="artist-3d" aria-pressed="false">
+                                                <span class="gb-toggle-label">3D Artist</span>
+                                                <span class="gb-toggle-switch" aria-hidden="true"><span class="gb-toggle-knob"></span></span>
+                                            </button>
+                                        </div>
+                                        <button class="gb-panel-back" type="button" data-panel-back aria-label="Back to main menu">&lt;back</button>
+                                    </section>
+
+                                    <section class="gb-panel" data-panel="socials">
+                                        <p class="gb-panel-title">Socials</p>
+                                        <div class="gb-social-grid" aria-label="Social and contact buttons">
+                                            <a class="gb-social-box" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                                                <span class="gb-social-logo">X</span>
+                                                <span class="gb-social-name">X</span>
+                                            </a>
+                                            <a class="gb-social-box" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+                                                <span class="gb-social-logo">IG</span>
+                                                <span class="gb-social-name">Instagram</span>
+                                            </a>
+                                            <a class="gb-social-box" href="contact.html" aria-label="Contact page">
+                                                <span class="gb-social-logo">@</span>
+                                                <span class="gb-social-name">Contact</span>
+                                            </a>
+                                        </div>
+                                        <button class="gb-panel-back" type="button" data-panel-back aria-label="Back to main menu">&lt;back</button>
+                                    </section>
+                                </section>
+                            </section>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </main>
 
-        <!-- Showcase Panel -->
-        <section class="showcase">
-            <div class="showcase-content">
-                <h2>Featured Work</h2>
-                <p>Explore a selection of recent projects and creative explorations.</p>
-                <div class="showcase-gallery">
-                    <a href="projects/bottlecap.html"><img src="assets/images/finalcap1.gif" alt="Bottlecap Project" class="showcase-image"></a>
-                    <a href="projects/chicfila.html"><img src="assets/images/Collage-Poster-1.jpg" alt="Chicfila Poster 1" class="showcase-image"></a>
-                    <a href="projects/chicfila.html"><img src="assets/images/Collage Poster 2.jpg" alt="Chicfila Poster 2" class="showcase-image"></a>
-                    <a href="projects/toy.html"><img src="assets/images/toypackage.jpg" alt="Toy Package" class="showcase-image"></a>
-                    <a href="projects/hotsauce.html"><img src="assets/images/sunset.jpg" alt="Hotsauce Sunset" class="showcase-image"></a>
-                    <a href="projects/hotsauce.html"><img src="assets/images/burnedit.jpg" alt="Hotsauce Burned It" class="showcase-image"></a>
+            <aside class="gb-controls" aria-label="Console controls">
+                <div class="gb-dpad" role="group" aria-label="Directional pad">
+                    <div class="gb-dpad-shadow" aria-hidden="true">
+                        <span class="gb-prong gb-prong-up"></span>
+                        <span class="gb-prong gb-prong-right"></span>
+                        <span class="gb-prong gb-prong-down"></span>
+                        <span class="gb-prong gb-prong-left"></span>
+                        <span class="gb-dpad-center"></span>
+                    </div>
+                    <div class="gb-dpad-face" aria-hidden="true">
+                        <span class="gb-prong gb-prong-up"></span>
+                        <span class="gb-prong gb-prong-right"></span>
+                        <span class="gb-prong gb-prong-down"></span>
+                        <span class="gb-prong gb-prong-left"></span>
+                        <span class="gb-dpad-center"></span>
+                    </div>
+                    <button class="gb-dpad-hit gb-dpad-hit-up" type="button" data-dir="up" aria-label="D-pad up"></button>
+                    <button class="gb-dpad-hit gb-dpad-hit-left" type="button" data-dir="left" aria-label="D-pad left"></button>
+                    <button class="gb-dpad-hit gb-dpad-hit-right" type="button" data-dir="right" aria-label="D-pad right"></button>
+                    <button class="gb-dpad-hit gb-dpad-hit-down" type="button" data-dir="down" aria-label="D-pad down"></button>
                 </div>
-                <a href="projects.html" class="cta primary" style="margin-top: 20px;">View All Projects</a>
-            </div>
+
+                <div class="gb-action-buttons" role="group" aria-label="Action buttons">
+                    <button class="gb-action gb-action-a" type="button" data-action="a" aria-label="A button">
+                        <span>A</span>
+                    </button>
+                    <button class="gb-action gb-action-b" type="button" data-action="b" aria-label="B button">
+                        <span>B</span>
+                    </button>
+                </div>
+
+                <div class="gb-system-buttons" role="group" aria-label="System buttons">
+                    <button class="gb-system" type="button" data-action="start" aria-label="Start button"><span class="gb-system-label">START</span></button>
+                    <button class="gb-system" type="button" data-action="contact" aria-label="Contact button"><span class="gb-system-label">CONTACT</span></button>
+                </div>
+            </aside>
         </section>
+    </main>
 
-        <script src="assets/js/script.js"></script>
-    </body>
+    <div class="gb-image-overlay" id="gbImageOverlay" aria-hidden="true" role="dialog" aria-label="Expanded project image preview">
+        <div class="gb-image-overlay-content" id="gbImageOverlayContent"></div>
+    </div>
+
+    <noscript>
+        <nav class="gb-fallback-nav" aria-label="Fallback navigation">
+            <a href="index.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html">About</a>
+        </nav>
+    </noscript>
+
+    <script src="assets/js/gameboy/projects-data.js"></script>
+    <script src="assets/js/gameboy/menu.js"></script>
+    <script src="assets/js/gameboy/controls.js"></script>
+</body>
 </html>

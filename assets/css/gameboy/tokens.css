@@ -1,0 +1,75 @@
+﻿:root {
+    --gb-purple-1: #2f3f73;
+    --gb-purple-2: #1d2746;
+    --gb-blue-1: #8cc7ff;
+    --gb-blue-2: #426fb0;
+    --gb-shell-shadow: #141b31;
+    --gb-screen-bg: #f6e8cd;
+    --gb-screen-border: #5a4228;
+    --gb-screen-text: #27190f;
+    --gb-btn-red-a: #e1404b;
+    --gb-btn-red-b: #b72f39;
+    --gb-btn-black: #161616;
+    --gb-focus: #ffd162;
+    --gb-theme-text: #2a1a10;
+    --gb-theme-primary: #f6e8cd;
+    --gb-theme-primary-alt: #efdab6;
+    --gb-theme-surface: #f8e9cc;
+    --gb-theme-surface-strong: #fff0d4;
+    --gb-theme-secondary: #5a4228;
+    --gb-theme-secondary-soft: rgba(83, 61, 36, 0.6);
+    --gb-theme-secondary-soft-2: rgba(83, 61, 36, 0.65);
+    --gb-theme-panel-shadow: rgba(122, 76, 32, 0.22);
+    --gb-theme-hover: #ffd175;
+    --gb-toggle-track-off: #d8ccb7;
+    --gb-toggle-track-on: #406db1;
+    --gb-toggle-knob: #fff9ee;
+    --gb-font-ui: "bahnschrift", sans-serif;
+    --gb-font-ui-condensed: "bahnschrift-condensed", sans-serif;
+    --gb-font-buttons: Futura, "Futura PT", "Futura Std", "Century Gothic", "Trebuchet MS", Arial, sans-serif;
+}
+
+body.gameboy-home.palette-graphic-designer {
+    --gb-theme-text: #cfceba;
+    --gb-theme-primary: #211d12;
+    --gb-theme-primary-alt: #2c2619;
+    --gb-theme-surface: #2a2518;
+    --gb-theme-surface-strong: #332d1f;
+    --gb-theme-secondary: #406db1;
+    --gb-theme-secondary-soft: rgba(64, 109, 177, 0.7);
+    --gb-theme-secondary-soft-2: rgba(64, 109, 177, 0.82);
+    --gb-theme-panel-shadow: rgba(64, 109, 177, 0.24);
+    --gb-theme-hover: #406db1;
+    --gb-toggle-track-on: #406db1;
+    --gb-toggle-knob: #cfceba;
+}
+
+body.gameboy-home.palette-website-builder {
+    --gb-theme-text: #211d12;
+    --gb-theme-primary: #cfceba;
+    --gb-theme-primary-alt: #c4c2ad;
+    --gb-theme-surface: #d8d7c3;
+    --gb-theme-surface-strong: #e4e2cf;
+    --gb-theme-secondary: #ea392f;
+    --gb-theme-secondary-soft: rgba(234, 57, 47, 0.72);
+    --gb-theme-secondary-soft-2: rgba(234, 57, 47, 0.82);
+    --gb-theme-panel-shadow: rgba(234, 57, 47, 0.2);
+    --gb-theme-hover: #ea392f;
+    --gb-toggle-track-on: #ea392f;
+    --gb-toggle-knob: #fff5e8;
+}
+
+body.gameboy-home.palette-artist-3d {
+    --gb-theme-text: #261d22;
+    --gb-theme-primary: #ffffff;
+    --gb-theme-primary-alt: #f2f2f2;
+    --gb-theme-surface: #f7f7f7;
+    --gb-theme-surface-strong: #ffffff;
+    --gb-theme-secondary: #f1c22a;
+    --gb-theme-secondary-soft: rgba(241, 194, 42, 0.72);
+    --gb-theme-secondary-soft-2: rgba(241, 194, 42, 0.82);
+    --gb-theme-panel-shadow: rgba(241, 194, 42, 0.24);
+    --gb-theme-hover: #f1c22a;
+    --gb-toggle-track-on: #f1c22a;
+    --gb-toggle-knob: #ffffff;
+}

@@ -1,0 +1,629 @@
+﻿@media (min-width: 900px) {
+    .gb-shell {
+        grid-template-columns: minmax(200px, 22vw) minmax(0, 1fr) minmax(200px, 22vw);
+        grid-template-rows: auto minmax(0, 1fr);
+        align-items: center;
+        justify-content: center;
+        padding: 28px 20px 32px;
+        overflow: hidden;
+    }
+
+    .gb-controls {
+        display: contents;
+    }
+
+    .gb-system-buttons {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: minmax(200px, 22vw) minmax(0, 1fr) minmax(200px, 22vw);
+        justify-content: normal;
+        align-items: start;
+        gap: 0;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 4px;
+    }
+
+    .gb-system[data-action="contact"] {
+        grid-column: 1;
+        justify-self: center;
+        align-self: start;
+        margin-top: 0;
+    }
+
+    .gb-system[data-action="start"] {
+        grid-column: 3;
+        justify-self: center;
+        align-self: start;
+        margin-top: 0;
+    }
+
+    .gb-system {
+        width: 60%;
+        min-width: clamp(102px, 12vw, 130px);
+        max-width: 145px;
+        height: 15px;
+        min-height: 15px;
+        padding: 0;
+        font-size: 0;
+        margin-bottom: 18px;
+        display: block;
+    }
+
+    .gb-system-label {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: clamp(0.46rem, 1.7vh, 0.56rem);
+    }
+
+    .gb-screen-wrap {
+        grid-column: 2;
+        grid-row: 2;
+        padding: 12px;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+    }
+
+    .gb-screen {
+        width: min(100%, calc((100vh - 120px) * (160 / 144)));
+        max-height: calc(100vh - 120px);
+        transform: translateY(0);
+    }
+
+    .gb-dpad {
+        grid-column: 1;
+        grid-row: 2;
+        width: 190px;
+        height: 190px;
+        margin: 0;
+        justify-self: center;
+        align-self: center;
+        transform: none;
+        z-index: 2;
+        position: relative;
+    }
+
+    .gb-action-buttons {
+        grid-column: 3;
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+        align-items: flex-start;
+        flex-direction: row-reverse;
+        gap: 14px;
+        transform: none;
+        z-index: 2;
+        position: relative;
+    }
+
+    .gb-action {
+        width: clamp(82px, 11vh, 102px);
+        height: clamp(82px, 11vh, 102px);
+        font-size: clamp(1rem, 2.8vh, 1.25rem);
+    }
+
+    .gb-action-b {
+        margin-top: 0;
+    }
+
+    .gb-action-a {
+        margin-top: clamp(28px, 6vh, 56px);
+    }
+}
+
+@media (max-width: 899px) {
+    .gb-shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(0, 1fr) auto;
+        overflow: hidden;
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .gb-screen-wrap {
+        align-items: center;
+        justify-items: center;
+        padding: 14px 12px 0;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .gb-screen-bezel {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .gb-screen {
+        width: min(100%, calc((100vh - 210px) * (160 / 144)));
+        max-width: 100%;
+        max-height: 100%;
+        transform: translateY(0);
+    }
+
+    .gb-controls {
+        justify-items: center;
+        padding: 2px 14px calc(18px + env(safe-area-inset-bottom, 0px));
+        gap: 8px;
+    }
+
+    .gb-action-buttons {
+        align-items: flex-start;
+        flex-direction: row-reverse;
+        transform: translateY(-10px);
+    }
+
+    .gb-action {
+        width: 82px;
+        height: 82px;
+        font-size: 1.08rem;
+    }
+
+    .gb-action-b {
+        margin-top: 0;
+    }
+
+    .gb-action-a {
+        margin-top: 32px;
+    }
+
+    .gb-system-buttons {
+        padding-bottom: 2px;
+        gap: 14px;
+    }
+
+    .gb-system {
+        min-width: 104px;
+        font-size: 0.62rem;
+        min-height: 26px;
+        padding: 8px 12px;
+    }
+
+    .gb-system-corner {
+        font-size: clamp(0.72rem, 3.4vw, 1.05rem);
+    }
+
+    .gb-main-menu.is-active {
+        grid-template-columns: minmax(108px, 34%) minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .gb-menu-item,
+    .gb-project-list-item,
+    .gb-back-button {
+        font-size: clamp(0.78rem, 3.2vw, 1rem);
+        padding: 6px 8px;
+    }
+
+    .gb-description-text {
+        font-size: clamp(0.72rem, 2.8vw, 0.92rem);
+    }
+
+    .gb-main-menu.is-active .gb-content-column .gb-preview-card {
+        margin-top: 12px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 540px) {
+    .gb-screen-wrap {
+        padding: 24px 8px 2px;
+    }
+
+    .gb-screen-bezel {
+        padding: 0;
+    }
+
+    .gb-screen {
+        width: min(100%, calc((100vh - 220px) * (160 / 144)));
+        padding: clamp(8px, 2.8vw, 14px);
+    }
+
+    .gb-controls {
+        gap: 8px;
+        padding: 2px 10px calc(22px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .gb-dpad {
+        width: 150px;
+        height: 150px;
+        transform: translateY(-30px);
+    }
+
+    .gb-dpad .gb-prong-up,
+    .gb-dpad .gb-prong-down {
+        width: 52px;
+        height: 58px;
+        left: 49px;
+        top: 5px;
+    }
+
+    .gb-dpad .gb-prong-down {
+        top: auto;
+        bottom: 5px;
+    }
+
+    .gb-dpad .gb-prong-left,
+    .gb-dpad .gb-prong-right {
+        width: 58px;
+        height: 52px;
+        left: 5px;
+        top: 49px;
+    }
+
+    .gb-dpad .gb-prong-right {
+        left: auto;
+        right: 5px;
+    }
+
+    .gb-dpad .gb-dpad-center {
+        width: 60px;
+        height: 60px;
+        left: 45px;
+        top: 45px;
+    }
+
+    .gb-dpad-hit-up,
+    .gb-dpad-hit-down {
+        left: 50px;
+        width: 50px;
+        height: 48px;
+    }
+
+    .gb-dpad-hit-left,
+    .gb-dpad-hit-right {
+        top: 50px;
+        width: 48px;
+        height: 50px;
+    }
+
+    .gb-dpad-hit-left {
+        left: 4px;
+    }
+
+    .gb-dpad-hit-right {
+        right: 4px;
+    }
+
+    .gb-dpad-hit-down {
+        bottom: 4px;
+    }
+
+    .gb-action {
+        width: 74px;
+        height: 74px;
+        font-size: 1rem;
+    }
+
+    .gb-action-a {
+        margin-top: 24px;
+    }
+
+    .gb-system-buttons {
+        gap: 10px;
+    }
+
+    .gb-system {
+        width: 46%;
+        min-width: 90px;
+        max-width: 116px;
+        height: 14px;
+        min-height: 14px;
+        padding: 0;
+        font-size: 0;
+    }
+
+    .gb-system-label {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: clamp(0.46rem, 2.2vw, 0.54rem);
+        top: calc(100% + 6px);
+    }
+
+    .gb-start-button {
+        width: 100%;
+        padding: 9px 10px;
+    }
+
+    .gb-main-menu.is-active {
+        grid-template-columns: minmax(96px, 36%) minmax(0, 1fr);
+        gap: 6px;
+    }
+
+    .gb-main-menu.is-panel-focus {
+        grid-template-columns: minmax(16px, 6%) minmax(0, 1fr);
+    }
+
+    .gb-main-menu.is-video-focus {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .gb-main-menu.is-video-focus.is-video-tall .gb-content-column {
+        grid-template-columns: minmax(100px, 1fr) auto;
+        padding-top: 18px;
+    }
+
+    .gb-system-corner {
+        font-size: clamp(0.68rem, 4.2vw, 0.95rem);
+        margin-bottom: 4px;
+    }
+
+    .gb-menu-item,
+    .gb-project-list-item,
+    .gb-back-button,
+    .gb-panel-back,
+    .gb-video-back {
+        font-size: clamp(0.7rem, 3.6vw, 0.9rem);
+        padding: 5px 7px;
+    }
+
+    .gb-action-hint {
+        max-width: min(52%, 160px);
+        font-size: clamp(0.58rem, 2.8vw, 0.7rem);
+    }
+
+    .gb-content-column {
+        grid-template-rows: minmax(0, 1fr) minmax(0, 0.38fr);
+        min-width: 0;
+    }
+
+    .gb-content-column.no-preview {
+        grid-template-rows: minmax(0, 1fr);
+    }
+
+    .gb-preview-card {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        aspect-ratio: 1 / 1;
+        justify-self: stretch;
+    }
+
+    .gb-main-menu.is-active .gb-content-column .gb-preview-card {
+        margin-top: 8px;
+    }
+
+    .gb-preview-image,
+    .gb-preview-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+    }
+
+    .gb-panel-stack {
+        min-height: 0;
+        min-width: 0;
+    }
+
+    .gb-description-text {
+        font-size: clamp(0.68rem, 3.2vw, 0.84rem);
+    }
+
+    .gb-social-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .gb-social-box {
+        min-height: 52px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 899px) {
+    .gb-shell {
+        grid-template-columns: minmax(100px, 22vw) minmax(0, 1fr) minmax(100px, 22vw);
+        grid-template-rows: auto minmax(0, 1fr);
+        align-items: center;
+        justify-items: stretch;
+        overflow: hidden;
+        padding: 10px 8px 14px;
+    }
+
+    .gb-controls {
+        display: contents;
+    }
+
+    .gb-system-buttons {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: minmax(100px, 22vw) minmax(0, 1fr) minmax(100px, 22vw);
+        justify-content: normal;
+        align-items: start;
+        gap: 0;
+        width: 100%;
+        padding: 0;
+        transform: none;
+    }
+
+    .gb-system[data-action="contact"] {
+        grid-column: 1;
+        justify-self: center;
+        align-self: start;
+        margin-top: 0;
+    }
+
+    .gb-system[data-action="start"] {
+        grid-column: 3;
+        justify-self: center;
+        align-self: start;
+        margin-top: 0;
+    }
+
+    .gb-system {
+        width: 60%;
+        min-width: clamp(80px, 14vw, 120px);
+        max-width: 130px;
+        height: 15px;
+        min-height: 15px;
+        padding: 0;
+        font-size: 0;
+        margin-bottom: 18px;
+        display: block;
+    }
+
+    .gb-system-label {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: clamp(0.42rem, 1.6vh, 0.52rem);
+    }
+
+    .gb-screen-wrap {
+        grid-column: 2;
+        grid-row: 2;
+        padding: 6px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+    }
+
+    .gb-screen {
+        width: min(100%, calc((100vh - 56px) * (160 / 144)));
+        max-height: calc(100vh - 56px);
+        transform: translateY(0);
+    }
+
+    .gb-dpad {
+        grid-column: 1;
+        grid-row: 2;
+        width: 190px;
+        height: 190px;
+        margin: 0;
+        justify-self: center;
+        align-self: center;
+        transform: scale(0.78);
+        transform-origin: center center;
+        z-index: 2;
+    }
+
+    .gb-action-buttons {
+        grid-column: 3;
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+        align-items: flex-start;
+        flex-direction: row-reverse;
+        gap: 8px;
+        transform: none;
+        z-index: 2;
+    }
+
+    .gb-action {
+        width: clamp(62px, 13vh, 82px);
+        height: clamp(62px, 13vh, 82px);
+        font-size: clamp(0.9rem, 3.1vh, 1.08rem);
+    }
+
+    .gb-action-b {
+        margin-top: 0;
+    }
+
+    .gb-action-a {
+        margin-top: clamp(22px, 6vh, 48px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gb-shell,
+    .gb-panel {
+        animation: none;
+    }
+}
+
+@keyframes gbBoot {
+    0% {
+        transform: translateY(18px) scale(0.98);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes gbReveal {
+    0% {
+        transform: translateY(4px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gbSlideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-115%);
+        opacity: 1;
+    }
+}
+
+@keyframes gbSlideInFromLeft {
+    0% {
+        transform: translateX(-115%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gbSlideOutRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(115%);
+        opacity: 1;
+    }
+}
+
+@keyframes gbSlideInFromRight {
+    0% {
+        transform: translateX(115%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gbStartPulse {
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.08);
+    }
+}

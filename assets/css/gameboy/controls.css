@@ -1,0 +1,378 @@
+﻿.gb-controls {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 10px 14px 16px;
+    box-sizing: border-box;
+}
+
+.gb-dpad {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(-34px);
+}
+
+.gb-dpad-shadow,
+.gb-dpad-face {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.gb-dpad-shadow .gb-prong,
+.gb-dpad-shadow .gb-dpad-center,
+.gb-dpad-face .gb-prong,
+.gb-dpad-face .gb-dpad-center {
+    position: absolute;
+    border-radius: 24px;
+}
+
+.gb-dpad-shadow {
+    transform: translateY(8px);
+}
+
+.gb-dpad-shadow .gb-prong,
+.gb-dpad-shadow .gb-dpad-center {
+    background: #c69f1e;
+}
+
+.gb-dpad-face .gb-prong,
+.gb-dpad-face .gb-dpad-center {
+    background: #f9df3d;
+    transition: transform 120ms ease;
+}
+
+.gb-dpad .gb-prong-up {
+    width: 68px;
+    height: 76px;
+    left: 61px;
+    top: 5px;
+    transform-origin: right center;
+}
+
+.gb-dpad .gb-prong-right {
+    width: 76px;
+    height: 68px;
+    right: 5px;
+    top: 61px;
+    transform-origin: center bottom;
+}
+
+.gb-dpad .gb-prong-down {
+    width: 68px;
+    height: 76px;
+    left: 61px;
+    bottom: 5px;
+    transform-origin: right center;
+}
+
+.gb-dpad .gb-prong-left {
+    width: 76px;
+    height: 68px;
+    left: 5px;
+    top: 61px;
+    transform-origin: center bottom;
+}
+
+.gb-dpad .gb-dpad-center {
+    width: 78px;
+    height: 78px;
+    left: 56px;
+    top: 56px;
+    border-radius: 24px;
+}
+
+.gb-dpad.is-right-pressed .gb-dpad-face .gb-prong-right {
+    transform: translateY(5px);
+}
+
+.gb-dpad.is-right-pressed .gb-dpad-face .gb-prong-left {
+    transform: translateY(-5px);
+}
+
+.gb-dpad.is-right-pressed .gb-dpad-face .gb-prong-up,
+.gb-dpad.is-right-pressed .gb-dpad-face .gb-prong-down {
+    transform: scaleX(0.9265);
+}
+
+.gb-dpad.is-left-pressed .gb-dpad-face .gb-prong-right {
+    transform: translateY(-5px);
+}
+
+.gb-dpad.is-left-pressed .gb-dpad-face .gb-prong-left {
+    transform: translateY(5px);
+}
+
+.gb-dpad.is-left-pressed .gb-dpad-face .gb-prong-up,
+.gb-dpad.is-left-pressed .gb-dpad-face .gb-prong-down {
+    transform-origin: left center;
+    transform: scaleX(0.9265);
+}
+
+.gb-dpad.is-up-pressed .gb-dpad-face .gb-prong-up {
+    transform: translateY(5px);
+}
+
+.gb-dpad.is-up-pressed .gb-dpad-face .gb-prong-down {
+    transform: translateY(-5px);
+}
+
+.gb-dpad.is-up-pressed .gb-dpad-face .gb-prong-left,
+.gb-dpad.is-up-pressed .gb-dpad-face .gb-prong-right {
+    transform-origin: center bottom;
+    transform: translateY(-5px) scaleY(0.853);
+}
+
+.gb-dpad.is-down-pressed .gb-dpad-face .gb-prong-up {
+    transform: translateY(-5px);
+}
+
+.gb-dpad.is-down-pressed .gb-dpad-face .gb-prong-down {
+    transform: translateY(5px);
+}
+
+.gb-dpad.is-down-pressed .gb-dpad-face .gb-prong-left,
+.gb-dpad.is-down-pressed .gb-dpad-face .gb-prong-right {
+    transform-origin: center bottom;
+    transform: translateY(5px) scaleY(1.0735);
+}
+
+.gb-dpad-hit {
+    position: absolute;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.gb-dpad-hit:focus-visible,
+.gb-dpad-hit:hover {
+    outline: 2px solid var(--gb-focus);
+    outline-offset: 1px;
+    border-radius: 14px;
+}
+
+.gb-dpad-hit-up {
+    left: 63px;
+    top: 4px;
+    width: 64px;
+    height: 60px;
+}
+
+.gb-dpad-hit-left {
+    left: 4px;
+    top: 63px;
+    width: 60px;
+    height: 64px;
+}
+
+.gb-dpad-hit-right {
+    right: 4px;
+    top: 63px;
+    width: 60px;
+    height: 64px;
+}
+
+.gb-dpad-hit-down {
+    left: 63px;
+    bottom: 4px;
+    width: 64px;
+    height: 60px;
+}
+
+.gb-action-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gb-action {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 0;
+    color: #fff;
+    font-family: var(--gb-font-buttons);
+    font-weight: 700;
+    font-size: 1.15rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+    --gb-action-top: #e14a55;
+    --gb-action-bottom: #972f37;
+}
+
+.gb-action::before,
+.gb-action::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.gb-action::before {
+    background: var(--gb-action-bottom);
+    transform: translateY(10px);
+    z-index: 1;
+}
+
+.gb-action::after {
+    background: var(--gb-action-top);
+    z-index: 2;
+    transition: transform 120ms ease;
+}
+
+.gb-action span {
+    position: relative;
+    z-index: 3;
+    transition: transform 120ms ease;
+}
+
+.gb-action-a {
+    --gb-action-top: #e14a55;
+    --gb-action-bottom: #972f37;
+}
+
+.gb-action-b {
+    --gb-action-top: #d9404b;
+    --gb-action-bottom: #8e2a33;
+}
+
+.gb-action:hover,
+.gb-action:focus-visible {
+    outline: none;
+}
+
+.gb-action:hover::after,
+.gb-action:focus-visible::after,
+.gb-action:hover span,
+.gb-action:focus-visible span {
+    transform: translateY(-3px);
+}
+
+.gb-action:active::after {
+    transform: translateY(10px);
+}
+
+.gb-action:active span {
+    transform: translateY(10px);
+}
+
+.gb-system-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gb-system {
+    min-width: 114px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #fff;
+    font-family: var(--gb-font-buttons);
+    font-weight: 700;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    padding: 10px 12px;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    display: inline-grid;
+    place-items: center;
+    min-height: 28px;
+    box-sizing: border-box;
+}
+
+.gb-system-label {
+    position: relative;
+    z-index: 3;
+    font-family: var(--gb-font-buttons);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.gb-system:hover,
+.gb-system:focus-visible {
+    outline: none;
+}
+
+.gb-system::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: #2f2f2f;
+    transform: translateY(0);
+    transition: transform 120ms ease;
+    z-index: 2;
+}
+
+.gb-system::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5px;
+    bottom: -5px;
+    border-radius: 999px;
+    background: #0a0a0a;
+    transition: top 120ms ease;
+    z-index: 1;
+}
+
+.gb-system:hover::before,
+.gb-system:focus-visible::before {
+    transform: translateY(-3px);
+}
+
+.gb-system:hover::after,
+.gb-system:focus-visible::after {
+    top: 2px;
+}
+
+.gb-system:active::before {
+    transform: translateY(5px);
+}
+
+.gb-system:active::after {
+    top: 5px;
+}
+
+.gb-fallback-nav {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.gb-fallback-nav a {
+    color: #fff;
+}
+
+body.gameboy-home.high-contrast {
+    filter: saturate(1.08) contrast(1.16);
+}
+
+body.gameboy-home.animations-off *,
+body.gameboy-home.animations-off *::before,
+body.gameboy-home.animations-off *::after {
+    animation: none !important;
+    transition: none !important;
+}
