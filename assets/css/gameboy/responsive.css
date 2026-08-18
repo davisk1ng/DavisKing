@@ -18,25 +18,30 @@
         display: grid;
         grid-template-columns: minmax(200px, 22vw) minmax(0, 1fr) minmax(200px, 22vw);
         justify-content: normal;
-        align-items: start;
+        align-items: center;
         gap: 0;
         width: 100%;
         padding: 0;
         margin-bottom: 4px;
     }
 
+    .gb-system[data-action="contact"],
+    .gb-system[data-action="start"] {
+        grid-column: auto;
+        grid-row: 1;
+        justify-self: center;
+        align-self: center;
+        margin: 0;
+    }
+
     .gb-system[data-action="contact"] {
         grid-column: 1;
-        justify-self: center;
-        align-self: start;
         margin-top: 0;
     }
 
     .gb-system[data-action="start"] {
         grid-column: 3;
-        justify-self: center;
-        align-self: start;
-        margin-top: 0;
+        margin-top: 30px;
     }
 
     .gb-system {
@@ -47,7 +52,7 @@
         min-height: 15px;
         padding: 0;
         font-size: 0;
-        margin-bottom: 18px;
+        margin: 0;
         display: block;
     }
 
